@@ -91,8 +91,21 @@ describe "MeetingRole", :js => true do
         page.should have_content("Woo")
       end
 
+      it "raises an error if a user tries to update a role with invalid info" do
+        within_table('meeting_roles_table') do
+          click_link("Edit")
+        end        
+        fill_in 'meeting_role_title', :with => ""
+        fill_in 'meeting_role_description', :with => "Roo"
+        click_button("Update Meeting role")
+        page.should have_content("Title can't be blank")
+      end
+
       it "allows the user to destroy a meeting role" do
         click_link("Destroy")
+
+        # A confirmation box is expected, so accept the warning.
+        page.driver.browser.switch_to.alert.accept
         page.should_not have_content(meeting_role.title)
       end
     end

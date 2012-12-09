@@ -1,15 +1,16 @@
 class ProjectsController < ApplicationController
-  def index
-    @projects = Manual.projects
-    @user_count = User.count
-    respond_to do |format|
-      format.html
-      format.js
-    end
-  end
+
+#   def index
+#     @projects = Manual.projects
+#     @user_count = User.count
+#     respond_to do |format|
+#       format.html
+#       format.js
+#     end
+#   end
+
 
   def create
-
   end
 
   def edit

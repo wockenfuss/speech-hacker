@@ -4,8 +4,9 @@ class MeetingsController < ApplicationController
   #skip_before_filter :authenticate_user!, :only => [:index]
 
   def index
-    @meetings = Meeting.all
+    #@meetings = Meeting.all
     #@meetings = Meeting.for_month(params[:month])
+    @meetings   = Meeting.order_by_most_recent_date
     @attendance = Attendance.all
 
     json_meetings = Meeting.to_json(@meetings, current_user)
