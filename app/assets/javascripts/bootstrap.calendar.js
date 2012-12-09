@@ -12,19 +12,6 @@
 
 ;(function ( $, window, document, undefined ) {
 
-    // undefined is used here as the undefined global
-    // variable in ECMAScript 3 and is mutable (i.e. it can
-    // be changed by someone else). undefined isn't really
-    // being passed in so we can ensure that its value is
-    // truly undefined. In ES5, undefined can no longer be
-    // modified.
-
-    // window and document are passed through as local
-    // variables rather than as globals, because this (slightly)
-    // quickens the resolution process and can be more
-    // efficiently minified (especially when both are
-    // regularly referenced in your plugin).
-
     // Create the defaults once
     var pluginName = 'Calendar',
 
@@ -392,7 +379,7 @@
                     // 'location = ' + this.location + "<br/>" +
                     '<em>' + this.description + '</em>' + '<br/>' +
 
-                    // attendingOrNot(this.attending, this.meeting_role.title) + "<br/>" +
+                    // attendingOrNot(this.attending, this.meeting_role) + "<br/>" +
                     '<a href="meetings/' + this.meeting_id  + '">Sign up</a>' +
 
                     '</br></div></div></div></div>';
@@ -405,7 +392,7 @@
 
     function attendingOrNot(status, role) {
       if (status) {
-        return "You are currently attending as " + role.toLowerCase() + ".";
+        return "You are currently attending as " + role.title.toLowerCase() + ".";
       } else {
         return "You are not currently attending this meeting.";
       };

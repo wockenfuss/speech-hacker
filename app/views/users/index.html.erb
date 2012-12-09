@@ -17,7 +17,7 @@
 <div class="list-body">
   <p>
     <% @users.each do |user| %>
-    <span class="span2"><%= link_to user.name, user_manuals_path(user) %></span>
+    <span class="span2"><%= link_to user.name, user_path(user) %></span>
         <span class="span3"><%= user.email %></span>
         <span class="span2"><%= link_to "Edit user", edit_user_path(user.id) %></span>
         <% if current_user.super_admin? %>
