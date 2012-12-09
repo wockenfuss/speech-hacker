@@ -42,7 +42,8 @@ Speech Hacker is a Rails application that helps Toastmaster clubs organize meeti
 
 ## Todo
 
-* We have many todo items that will be added here.
+* Fix tests broken by styling reconfiguration.
+* Refine styling.
 
 ## Credits
 Speech Hacker is first built by Brent Coughenour, Kerrie Yee, Kyrie Kopczynski, Julie Mao, and Young Cha during Dev Bootcamp in Fall 2012.
